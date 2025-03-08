@@ -165,7 +165,7 @@ function nextDialogue() {
 }
 
 function createFloatingClouds() {
-    let cloudCount = 8; // Number of clouds
+    let cloudCount = 7; // Number of clouds
     let body = document.body;
 
     for (let i = 0; i < cloudCount; i++) {
@@ -175,14 +175,17 @@ function createFloatingClouds() {
 
         // Randomize starting position across the screen
         let startX = Math.random() * window.innerWidth; // Random horizontal position
-        let startY = Math.random() * (window.innerHeight * 0.8); // Spread out vertically
+        let startY = Math.random() * (window.innerHeight * 0.8); // Random vertical position
 
+        // Apply styles before appending to avoid reposition flicker
+        cloud.style.position = "absolute";
         cloud.style.left = `${startX}px`;
         cloud.style.top = `${startY}px`;
 
+        // Append to body *after* setting position
         body.appendChild(cloud);
 
-        // Randomize animation duration for variety
+        // Randomize up/down float speed for variety
         let verticalSpeed = Math.random() * 8 + 5; // Slow up/down (5-13s)
 
         cloud.style.animation = `floatUpDown ${verticalSpeed}s ease-in-out infinite alternate`;
