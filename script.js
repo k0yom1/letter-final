@@ -1,5 +1,5 @@
 let messages = {
-    "kei1245": ["(pet your puppi first)","...arf!","Keiiiiiiiii!!!!","Hello there~~!", "Ok. So here's my reply...", "first of all, *drumroll plz*", "HAPPY 6 MONTHS!! YAYYY!!!!!!!", "Thank you for all the efforts you put in","Thank you for accepting me","Thank you for being there for me","Thank you for being patient with me", "And thank you for being the best boyfriend ever!", "I loooove youuuuu","p.s. yes, this is the very first time ive coded something for someone...", "you have taken my first!!!!!! Scandalous!!!"]
+    "kei1245": ["(pet your puppi first)","...arf!","Keiiiiiiiii!!!!","Hello there~~!", "Ok. So here's my reply...", "first of all, *drumroll plz*", "HAPPY 6 MONTHS!! YAYYY!!!!!!!", "Thank you for all the efforts you put in","Thank you for accepting me","Thank you for being there for me","Thank you for being patient with me", "And thank you for being the best boyfriend ever!", "You're mine!!","I loooove youuuuu","p.s. yes, this is the very first time i've coded something for someone...", "you have taken my first!!!!!! Scandalous!!!"]
 };
 
 let currentMessages = [];
@@ -165,28 +165,49 @@ function nextDialogue() {
 }
 
 function createFloatingClouds() {
-    let cloudCount = 7; // Number of clouds
+    let cloudCount = 9; // Number of clouds
     let body = document.body;
+    let placedClouds = []; // Store placed cloud positions
 
     for (let i = 0; i < cloudCount; i++) {
         let cloud = document.createElement("img");
         cloud.src = "cloud.png";
         cloud.classList.add("floating-cloud");
 
-        // Randomize starting position across the screen
-        let startX = Math.random() * window.innerWidth; // Random horizontal position
-        let startY = Math.random() * (window.innerHeight * 0.8); // Random vertical position
+        let startX, startY;
+        let isOverlapping;
 
-        // Apply styles before appending to avoid reposition flicker
+        // Keep trying until a non-overlapping position is found
+        do {
+            isOverlapping = false;
+            startX = Math.random() * window.innerWidth; // Random X position
+            startY = Math.random() * (window.innerHeight * 0.8); // Random Y position
+
+            // Check for overlap with previously placed clouds
+            for (let j = 0; j < placedClouds.length; j++) {
+                let other = placedClouds[j];
+                let distance = Math.sqrt(Math.pow(startX - other.x, 2) + Math.pow(startY - other.y, 2));
+
+                if (distance < 150) { // Minimum distance between clouds (adjust as needed)
+                    isOverlapping = true;
+                    break;
+                }
+            }
+        } while (isOverlapping); // Repeat until a valid position is found
+
+        // Store the cloud's position
+        placedClouds.push({ x: startX, y: startY });
+
+        // Set position before adding to DOM to prevent flickering
         cloud.style.position = "absolute";
         cloud.style.left = `${startX}px`;
         cloud.style.top = `${startY}px`;
 
-        // Append to body *after* setting position
+        // Append to body *after* setting position to avoid movement flickers
         body.appendChild(cloud);
 
         // Randomize up/down float speed for variety
-        let verticalSpeed = Math.random() * 8 + 5; // Slow up/down (5-13s)
+        let verticalSpeed = Math.random() * 5 + 3; // Slow up/down (5-13s)
 
         cloud.style.animation = `floatUpDown ${verticalSpeed}s ease-in-out infinite alternate`;
     }
@@ -194,3 +215,4 @@ function createFloatingClouds() {
 
 // Run this function when page loads
 document.addEventListener("DOMContentLoaded", createFloatingClouds);
+
