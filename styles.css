@@ -161,14 +161,21 @@ body {
     position: absolute;
     width: 150px; /* Adjust size as needed */
     opacity: 0.8; /* Slight transparency */
-    z-index: -1; /* Ensures clouds are behind everything */
+    z-index: -1; /* Ensure clouds stay in the background */
 }
 
+/* Horizontal floating (left to right, looping) */
 @keyframes floatCloud {
     0% {
-        transform: translateX(-100vw);
+        transform: translateX(0);
     }
     100% {
         transform: translateX(100vw);
     }
+}
+
+/* Gentle up and down floating effect */
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
 }
