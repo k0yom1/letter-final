@@ -171,44 +171,47 @@ body {
 }
 
 /* Center the character and cloud dynamically */
+/* Center the character and cloud properly on all screen sizes */
 .character-container {
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Ensure true center */
+    top: 40vh; /* Adjusted for mobile - keeps it above the dialogue */
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Ensure the character is above the cloud */
+/* Ensure character is above the cloud */
 #character {
     position: relative;
     z-index: 2; /* Keeps it above the cloud */
+    width: 150px; /* Adjust for better scaling */
+    max-width: 100%;
 }
 
 /* Place the cloud below the character */
 #cloud {
     position: absolute;
-    width: 220px; /* Adjust size as needed */
-    bottom: -20px; /* Moves cloud slightly below character */
-    left: 50%;
-    transform: translateX(-50%); /* Centers cloud under character */
-    opacity: 0.9; /* Soft effect */
-    z-index: 1; /* Keeps cloud behind character */
-}
-
-/* Dialogue box positioned at the bottom like an RPG */
-.dialogue-box {
-    position: fixed; /* Stays at the bottom */
-    bottom: 10%; /* Locks it to the bottom */
+    width: 180px; /* Adjust for better fit */
+    bottom: -10px; /* Moves cloud slightly below character */
     left: 50%;
     transform: translateX(-50%);
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Ensures it doesn't get too large */
+    opacity: 0.9;
+    z-index: 1;
+}
+
+/* Ensure the dialogue box is positioned correctly on mobile */
+.dialogue-box {
+    position: fixed;
+    bottom: 5vh; /* Keeps it slightly above the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Wider on mobile */
+    max-width: 600px;
     background: white;
     padding: 20px;
-    border-radius: 10px 10px 0 0; /* Rounded corners on top only */
+    border-radius: 10px 10px 0 0;
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
     font-family: 'Joystix', Arial, sans-serif;
     color: #FF6DB6;
@@ -216,6 +219,7 @@ body {
     min-height: 80px;
     text-align: center;
 }
+
 
 html, body {
     overflow: hidden; /* Completely prevent scrolling */
