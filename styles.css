@@ -218,6 +218,9 @@ body {
 }
 
 html, body {
-    overflow: hidden; /* Prevents scrolling */
-    touch-action: none; /* Disables touch gestures from affecting the page */
+    overflow: hidden; /* Completely prevent scrolling */
+    height: 100%; /* Ensure full height */
+    touch-action: none; /* Disable gestures like scrolling & pinch-zoom */
+    position: fixed; /* Prevent movement when touching */
 }
+
