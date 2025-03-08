@@ -165,7 +165,7 @@ function nextDialogue() {
 }
 
 function createFloatingClouds() {
-    let cloudCount = 5; // Number of clouds
+    let cloudCount = 8; // Number of clouds
     let body = document.body;
 
     for (let i = 0; i < cloudCount; i++) {
@@ -183,7 +183,7 @@ function createFloatingClouds() {
         body.appendChild(cloud);
 
         // Animate clouds to move sideways
-        let speed = Math.random() * 30 + 20; // Random speed between 20-50s
+        let speed = Math.random() * 10 + 40; // Random speed between 20-50s
         cloud.style.animation = `floatCloud ${speed}s linear infinite`;
     }
 }
