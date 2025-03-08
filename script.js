@@ -1,5 +1,5 @@
 let messages = {
-    "kei1245": ["(pet your puppi first)","...arf!","Keiiiiiiiii!!!!","Hello there~~!", "Ok. So here's my reply...", "first of all, *drumroll plz*", "HAPPY 6 MONTHS!! YAYYY!!!!!!!", "Thank you for all the efforts you put in","Thank you for accepting me","Thank you for being there for me","Thank you for being patient with me", "And thank you for being the best boyfriend ever!", "You're mine!!","I loooove youuuuu","p.s. yes, this is the very first time i've coded something for someone...", "you have taken my first!!!!!! Scandalous!!!","Hope this wasn't too long..."]
+    "kei1245": ["(pet your puppi first)","...arf!","Keiiiiiiiii!!!!","Hello there~~!", "Ok. So here's my reply...", "first of all, *drumroll plz*", "HAPPY 6 MONTHS!! YAYYY!!!!!!!", "Thank you for all the efforts you put in","Thank you for accepting me","Thank you for being there for me","Thank you for being patient with me", "And thank you for being the best boyfriend ever!", "You're mine!!","I loooove youuuuu","p.s. yes, this is the very first time i've coded something for someone...", "you have taken my first!!!!!! Scandalous!!!"]
 };
 
 let currentMessages = [];
@@ -219,12 +219,17 @@ document.addEventListener("DOMContentLoaded", createFloatingClouds);
 function enablePetting() {
     let character = document.getElementById("character");
 
+    // Prevents touch gestures from affecting the page
+    document.addEventListener("touchmove", function (e) {
+        e.preventDefault(); // Stops scrolling
+    }, { passive: false });
+
     // Detect if it's a mobile device
     let isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
     if (isMobile) {
         character.addEventListener("touchstart", function (e) {
-            e.preventDefault(); // Prevent scrolling
+            e.preventDefault(); // Prevents accidental scrolling
             isPetting = true;
             startPettingTimer();
             spawnPettingHearts();
