@@ -216,3 +216,8 @@ body {
     min-height: 80px;
     text-align: center;
 }
+
+html, body {
+    overflow: hidden; /* Prevents scrolling */
+    touch-action: none; /* Disables touch gestures from affecting the page */
+}
