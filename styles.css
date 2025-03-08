@@ -164,18 +164,8 @@ body {
     z-index: -1; /* Ensure clouds stay in the background */
 }
 
-/* Horizontal floating (left to right, looping) */
-@keyframes floatCloud {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(100vw);
-    }
-}
-
-/* Gentle up and down floating effect */
+/* Gentle up and down floating */
 @keyframes floatUpDown {
     0% { transform: translateY(0); }
-    100% { transform: translateY(10px); }
+    100% { transform: translateY(20px); } /* Slowly moves up */
 }
