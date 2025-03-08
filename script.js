@@ -256,3 +256,17 @@ function enablePetting() {
 
 // Run this when the page loads
 document.addEventListener("DOMContentLoaded", enablePetting);
+
+function adjustForMobile() {
+    let characterContainer = document.querySelector(".character-container");
+
+    if (window.innerWidth < 600) { // Adjust for mobile screens
+        characterContainer.style.top = "35vh"; // Move it slightly up
+    } else {
+        characterContainer.style.top = "50%"; // Standard positioning on larger screens
+    }
+}
+
+// Run this function when the page loads and on resize
+window.addEventListener("resize", adjustForMobile);
+document.addEventListener("DOMContentLoaded", adjustForMobile);
