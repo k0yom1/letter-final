@@ -216,3 +216,38 @@ function createFloatingClouds() {
 // Run this function when page loads
 document.addEventListener("DOMContentLoaded", createFloatingClouds);
 
+function enablePetting() {
+    let character = document.getElementById("character");
+
+    // Detect if it's a mobile device
+    let isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+    if (isMobile) {
+        character.addEventListener("touchstart", function (e) {
+            e.preventDefault(); // Prevent scrolling
+            isPetting = true;
+            startPettingTimer();
+            spawnPettingHearts();
+        });
+
+        character.addEventListener("touchend", function () {
+            isPetting = false;
+            clearTimeout(pettingTimer);
+        });
+    } else {
+        // Desktop version (hover-based)
+        character.addEventListener("mouseenter", function () {
+            isPetting = true;
+            startPettingTimer();
+            spawnPettingHearts();
+        });
+
+        character.addEventListener("mouseleave", function () {
+            isPetting = false;
+            clearTimeout(pettingTimer);
+        });
+    }
+}
+
+// Run this when the page loads
+document.addEventListener("DOMContentLoaded", enablePetting);
