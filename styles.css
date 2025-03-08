@@ -170,44 +170,44 @@ body {
     100% { transform: translateY(20px); } /* Moves up slightly */
 }
 
-/* Center the character and cloud dynamically */
-/* Center the character and cloud properly on all screen sizes */
+/* Center the character and cloud on all screen sizes */
 .character-container {
     position: absolute;
-    top: 40vh; /* Adjusted for mobile - keeps it above the dialogue */
-    left: 50%;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: fit-content;
 }
 
 /* Ensure character is above the cloud */
 #character {
     position: relative;
-    z-index: 2; /* Keeps it above the cloud */
-    width: 150px; /* Adjust for better scaling */
+    z-index: 2;
+    width: 180px; /* Adjust size as needed */
     max-width: 100%;
 }
 
 /* Place the cloud below the character */
 #cloud {
     position: absolute;
-    width: 180px; /* Adjust for better fit */
-    bottom: -10px; /* Moves cloud slightly below character */
+    width: 220px; /* Adjust as needed */
+    bottom: -20px; /* Moves cloud slightly below character */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0.9;
     z-index: 1;
 }
 
-/* Ensure the dialogue box is positioned correctly on mobile */
+/* Adjust positioning of dialogue box */
 .dialogue-box {
     position: fixed;
-    bottom: 5vh; /* Keeps it slightly above the bottom */
+    bottom: 8vh; /* Adds space above bottom */
     left: 50%;
     transform: translateX(-50%);
-    width: 90%; /* Wider on mobile */
+    width: 80%; /* Responsive width */
     max-width: 600px;
     background: white;
     padding: 20px;
@@ -219,12 +219,3 @@ body {
     min-height: 80px;
     text-align: center;
 }
-
-
-html, body {
-    overflow: hidden; /* Completely prevent scrolling */
-    height: 100%; /* Ensure full height */
-    touch-action: none; /* Disable gestures like scrolling & pinch-zoom */
-    position: fixed; /* Prevent movement when touching */
-}
-
