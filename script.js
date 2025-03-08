@@ -1,5 +1,5 @@
 let messages = {
-    "kei1245": ["(pet your puppi first)","...arf!","Keiiiiiiiii!!!!","Hello there~~!", "Ok. So here's my reply...", "first of all, *drumroll plz*", "HAPPY 6 MONTHS!! YAYYY!!!!!!!", "Thank you for all the efforts you put in","Thank you for accepting me","Thank you for being there for me","Thank you for being patient with me", "And thank you for being the best boyfriend ever!", "You're mine!!","I loooove youuuuu","p.s. yes, this is the very first time i've coded something for someone...", "you have taken my first!!!!!! Scandalous!!!"]
+    "kei1245": ["(pet your puppi first)","...arf!","Keiiiiiiiii!!!!","Hello there~~!", "Ok. So here's my reply...", "first of all, *drumroll plz*", "HAPPY 6 MONTHS!! YAYYY!!!!!!!", "Thank you for all the efforts you put in","Thank you for accepting me","Thank you for being there for me","Thank you for being patient with me", "And thank you for being the best boyfriend ever!", "You're mine!!","I loooove youuuuu","p.s. yes, this is the very first time i've coded something for someone...", "you have taken my first!!!!!! Scandalous!!!", "Hope this was not too long...", "hope you liked it TT (i tried my best)"]
 };
 
 let currentMessages = [];
