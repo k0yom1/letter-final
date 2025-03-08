@@ -158,14 +158,14 @@ body {
 }
 
 .floating-cloud {
-    position: absolute;
+    position: absolute; /* Ensures it stays at assigned position */
     width: 150px; /* Adjust size as needed */
     opacity: 0.8; /* Slight transparency */
-    z-index: -1; /* Ensure clouds stay in the background */
+    z-index: -1; /* Ensures clouds stay in the background */
 }
 
-/* Gentle up and down floating */
+/* Smooth up and down floating effect */
 @keyframes floatUpDown {
     0% { transform: translateY(0); }
-    100% { transform: translateY(20px); } /* Slowly moves up */
+    100% { transform: translateY(20px); } /* Moves up slightly */
 }
