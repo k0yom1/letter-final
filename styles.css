@@ -60,7 +60,7 @@ button {
 }
 
 body {
-    background-color: #7bd7ff;
+    background-color: #65c2ff;
     text-align: center;
     font-family: 'Joystix', Arial, sans-serif;
     color: #FF6DB6;
@@ -158,14 +158,61 @@ body {
 }
 
 .floating-cloud {
-    position: absolute; /* Ensures it stays at assigned position */
+    position: absolute; /* Ensures clouds stay in place */
     width: 150px; /* Adjust size as needed */
-    opacity: 0.8; /* Slight transparency */
-    z-index: -1; /* Ensures clouds stay in the background */
+    opacity: 0.8; /* Slight transparency for soft effect */
+    z-index: -1; /* Keeps clouds in the background */
 }
 
-/* Smooth up and down floating effect */
+/* Smooth up and down floating */
 @keyframes floatUpDown {
-    0% { transform: translateY(0); }
+    0% { transform: translateY(0px); }
     100% { transform: translateY(20px); } /* Moves up slightly */
+}
+
+/* Center the character and cloud dynamically */
+.character-container {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Ensure true center */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ensure the character is above the cloud */
+#character {
+    position: relative;
+    z-index: 2; /* Keeps it above the cloud */
+}
+
+/* Place the cloud below the character */
+#cloud {
+    position: absolute;
+    width: 220px; /* Adjust size as needed */
+    bottom: -20px; /* Moves cloud slightly below character */
+    left: 50%;
+    transform: translateX(-50%); /* Centers cloud under character */
+    opacity: 0.9; /* Soft effect */
+    z-index: 1; /* Keeps cloud behind character */
+}
+
+/* Dialogue box positioned at the bottom like an RPG */
+.dialogue-box {
+    position: fixed; /* Stays at the bottom */
+    bottom: 10%; /* Locks it to the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Ensures it doesn't get too large */
+    background: white;
+    padding: 20px;
+    border-radius: 10px 10px 0 0; /* Rounded corners on top only */
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Joystix', Arial, sans-serif;
+    color: #FF6DB6;
+    border: 2px solid #FF6DB6;
+    min-height: 80px;
+    text-align: center;
 }
