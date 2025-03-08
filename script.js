@@ -260,13 +260,13 @@ document.addEventListener("DOMContentLoaded", enablePetting);
 function adjustForMobile() {
     let characterContainer = document.querySelector(".character-container");
 
-    if (window.innerWidth < 600) { // Adjust for mobile screens
-        characterContainer.style.top = "35vh"; // Move it slightly up
+    if (window.innerWidth < 600) { // Mobile screens
+        characterContainer.style.top = "45vh"; // Moves up slightly for better fit
     } else {
-        characterContainer.style.top = "50%"; // Standard positioning on larger screens
+        characterContainer.style.top = "50%"; // Standard centering on desktop
     }
 }
 
-// Run this function when the page loads and on resize
+// Run function on page load and when screen resizes
 window.addEventListener("resize", adjustForMobile);
 document.addEventListener("DOMContentLoaded", adjustForMobile);
