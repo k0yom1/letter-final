@@ -1,0 +1,174 @@
+body {
+    background-color: #d0f0ff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.letter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.letter-img {
+    width: 300px;
+    cursor: pointer;
+    animation: float 1s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-10px); }
+}
+
+.hidden {
+    display: none;
+}
+
+#game-screen {
+    margin-top: 50px;
+}
+
+.character-container img {
+    width: 200px;
+}
+
+.dialogue-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+button {
+    background: pink;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+@font-face {
+    font-family: 'Joystix';
+    src: url('fonts/joystix-monospace.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #7bd7ff;
+    text-align: center;
+    font-family: 'Joystix', Arial, sans-serif;
+    color: #FF6DB6;
+}
+
+.dialogue-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    font-family: 'Joystix', Arial, sans-serif;
+    color: #FF6DB6;
+    border: 2px solid #FF6DB6;
+    position: relative;
+    min-height: 80px;
+    padding-bottom: 30px;
+    cursor: pointer; /* Allows clicking anywhere on the box */
+}
+
+#next-indicator {
+    font-size: 20px;
+    color: #FF6DB6; /* Cute pink color */
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    animation: blink 0.8s infinite alternate;
+    visibility: hidden; /* Hidden until message finishes */
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.jump-animation {
+    animation: jump 0.5s infinite;
+}
+
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(10px) scale(0.6); }
+    50% { opacity: 1; transform: translateY(-10px) scale(0.8); }
+    100% { opacity: 0; transform: translateY(-40px) scale(1); }
+}
+
+.heart {
+    position: absolute;
+    width: 60px; /* Smaller size */
+    animation: floatUp 1.5s ease-out infinite;
+    pointer-events: none; /* Prevents interaction */
+}
+
+#letter-text {
+    font-size: 24px;
+    font-family: 'Joystix', Arial, sans-serif;
+    color: #ffffff; /* Cute pink color */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#heart {
+    position: absolute;
+    width: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Prevents interference */
+}
+
+.character-container {
+    position: relative; /* Ensures child elements can be positioned */
+    display: inline-block;
+}
+
+#character {
+    position: relative;
+    z-index: 2; /* Brings character to the front */
+}
+
+#cloud {
+    position: absolute;
+    width: 200px; /* Adjust as needed */
+    bottom: -5px; /* Moves cloud slightly below character */
+    left: 50%;
+    transform: translateX(-50%); /* Centers cloud under character */
+    opacity: 0.9; /* Slight transparency */
+    z-index: 1; /* Ensures cloud is behind character */
+}
+
+.floating-cloud {
+    position: absolute;
+    width: 150px; /* Adjust size as needed */
+    opacity: 0.8; /* Slight transparency */
+    z-index: -1; /* Ensures clouds are behind everything */
+}
+
+@keyframes floatCloud {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}

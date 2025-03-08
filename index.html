@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Love Letter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="letter-container">
+        <div class="letter-content">
+            <p id="letter-text">You have received a letter!</p>
+            <img src="letter.png" alt="Love Letter" class="letter-img" onclick="openLetter()">
+        </div>
+    </div>
+
+    <div id="game-screen" class="hidden">
+        <div class="character-container">
+            <img id="cloud" src="cloud.png" alt="Cloud">
+            <img id="character" src="character.gif" alt="Cute Character">
+            <img id="heart" src="heart.gif" alt="Heart" class="hidden">
+        </div>
+        <div id="dialogue-box" class="dialogue-box">
+            <p id="dialogue-text"></p>
+            <span id="next-indicator">▼</span> <!-- Triangle indicator -->
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
